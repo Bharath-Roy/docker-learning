@@ -12,7 +12,7 @@ RUN touch ~/python-text-files-folder/file5.txt
 RUN touch ~/python-text-files-folder/file6.txt
 RUN touch ~/python-text-files-folder/file7.txt
 RUN touch ~/python-text-files-folder/file8.txt
-RUN touch ~/python-text-files-folder/file9.tx t
+RUN touch ~/python-text-files-folder/file9.txt
 RUN touch ~/python-text-files-folder/file10.txt
 WORKDIR /code
 CMD ["python", "script.py"]
