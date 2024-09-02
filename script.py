@@ -23,7 +23,7 @@ for i in range(1, 11):
 url = 'https://jsonplaceholder.typicode.com/users/2'
 
 print("Script is OK")
-print("first time running")
+print("second time running")
 response = requests.get(url)
 print(response.status_code)
 
