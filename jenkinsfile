@@ -1,0 +1,47 @@
+pipeline {
+   agent any
+    environment {
+       DOCKER_HOST = 'unix:///var/run/docker.sock' // Set DOCKER_HOST environment variable
+}
+   stages {
+    stage('Clone'){
+        steps {
+            sh "echo Cloning github repo"
+            git(
+                   url: "https://github.com/Bharath-Roy/docker-learning.git",
+                   branch: "main",
+               )
+            sh "echo Cloned github repo"
+        }
+    } 
+
+
+    stage('Build') {
+       steps {
+           echo "Building starts"
+           sh 'docker build -t jenkins-learning -f Dockerfile .'
+           echo "Building complete"
+       }
+    }
+
+
+    stage('Tests') {
+       steps {
+           echo 'Running tests'
+           echo 'Actual command to run tests'
+           echo 'Completed running tests'
+       }
+    }
+
+
+    stage('Push'){
+       steps {
+           echo 'Pushing starts'
+           echo 'Actual push'
+           echo 'Pushing complete'
+       }
+    }
+
+
+   }
+}
